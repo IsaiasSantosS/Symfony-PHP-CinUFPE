@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>Matrícula</td>
+            <td>Ativo</td>
+            <td>Opções</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for professor in professores %}
+            <tr>
+                <td>{{ professor.id }}</td>
+                <td>{{ professor.nome }}</td>
+                <td>{{ professor.idade }}</td>
+                <td>{{ professor.matricula }}</td>
+                <td>{{ professor.ativo ? 'SIM' : 'NÃO' }}</td>
+                <td><a href="{{ path('show_professor', {id: professor.id}) }}" class="btn">Ver</a></td>
+                <td><a href="{{ path('professor', {id: professor.id}) }}" class="btn">Editar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block title %}
+    Lista de Professores
+{% endblock %}
+

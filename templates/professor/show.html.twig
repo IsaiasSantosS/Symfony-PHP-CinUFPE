@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <tr>
+            <th colspan="2">Dados do Professor</th>
+        </tr>
+        <tr>
+            <th>Nome</th>
+            <td>{{ professor.nome }}</td>
+        </tr>
+        <tr>
+            <th>Idade</th>
+            <td>{{ professor.idade }}</td>
+        </tr>
+        <tr>
+            <th>Matrícula</th>
+            <td>{{ professor.matricula }}</td>
+        </tr>
+        <tr>
+            <th>Ativo</th>
+            <td>{{ professor.ativo ? 'SIM' : 'NÃO' }}</td>
+        </tr>
+        <tr>
+            <td><a href="{{ path('list_professor') }}" class="btn">Listar</a></td>
+            <td><a href="{{ path('professor') }}" class="btn">Criar</a></td>
+        </tr>
+    </table>
+{% endblock %}
+
